@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+  mongo:
+    restart: always
+    image: mongo
+    volumes: 
+    - db_data:/data/db
+  dart:
+    restart: always
+    image: google/dart-runtime
+    depends_on:
+    - mongo
+    volumes: 
+    - ./dart_pub:/app
+    - packages:/packages
+    entrypoint: ["bash", "command.sh"]
+    ports: 
+    - 8080:8080
+volumes: 
+  packages:
+  db_data:
+
