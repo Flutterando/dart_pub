@@ -1,2 +1,2 @@
 # dart_pub
-Private pub.dev for packages Flutter Dart 2
+Private pub.dev for packages Flutter Dart
