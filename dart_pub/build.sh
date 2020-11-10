@@ -1,0 +1,1 @@
+dart2native bin/server.dart -k aot

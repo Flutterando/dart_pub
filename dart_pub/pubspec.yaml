@@ -1,0 +1,10 @@
+name: dart_pub
+description: A sample command-line application.
+# version: 1.0.0
+# homepage: https://www.example.com
+
+environment:
+  sdk: '>=2.9.3 <3.0.0'
+
+dependencies:
+  unpub: 1.2.2
