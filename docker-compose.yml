@@ -7,7 +7,7 @@ services:
     - db_data:/data/db
   dart:
     restart: always
-    image: google/dart-runtime:2.9
+    image: google/dart-runtime
     depends_on:
     - mongo
     volumes: 
