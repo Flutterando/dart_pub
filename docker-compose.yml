@@ -1,4 +1,4 @@
-version: "3.8"
+version: "3.9"
 services:
   mongo:
     restart: always
@@ -7,13 +7,12 @@ services:
     - db_data:/data/db
   dart:
     restart: always
-    image: google/dart-runtime
+    build: .
     depends_on:
     - mongo
     volumes: 
-    - ./dart_pub:/app
     - packages:/packages
-    entrypoint: ["bash", "command.sh"]
+    entrypoint: ["/app/bin/server.exe"]
     ports: 
     - 8080:8080
 volumes: 
