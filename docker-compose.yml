@@ -5,7 +5,7 @@ services:
     image: mongo
     volumes: 
     - db_data:/data/db
-  dart:
+  dart-server:
     restart: always
     build: .
     depends_on:
@@ -17,7 +17,7 @@ services:
   caddy:
     image: abiosoft/caddy:0.11.0
     depends_on:
-      - dart
+      - dart-server
     ports:
       - 80:80
       - 443:443
