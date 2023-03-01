@@ -7,4 +7,5 @@ environment:
   sdk: '>=2.9.3 <3.0.0'
 
 dependencies:
-  unpub: 1.2.2
+  unpub: ^2.1.0
+  mongo_dart: ^0.7.1
