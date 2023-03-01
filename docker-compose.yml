@@ -2,32 +2,20 @@ version: "3.9"
 services:
   mongo:
     restart: always
-    image: mongo
-    volumes: 
-    - db_data:/data/db
+    image: bitnami/mongodb:5.0
+    volumes:
+      - db_data:/data/db
   dart-server:
     restart: always
     build: .
     ports:
-    - 4000:8080
+      - 4000:8080
     depends_on:
-    - mongo
-    volumes: 
-    - packages:/packages
-    entrypoint: ["/app/bin/server.exe"]
-    
-  # caddy:
-  #   image: abiosoft/caddy:0.11.0
-  #   depends_on:
-  #     - dart-server
-  #   ports:
-  #     - 80:80
-  #     - 443:443
-  #   volumes: 
-  #     - caddy_data:/root/.caddy
-  #     - ./Caddyfile:/etc/Caddyfile
-volumes: 
+      - mongo
+    volumes:
+      - packages:/packages
+    entrypoint: [ "/app/bin/server.exe" ]
+volumes:
   packages:
   db_data:
-  # caddy_data:
 
